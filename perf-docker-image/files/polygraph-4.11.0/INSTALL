@@ -1,0 +1,14 @@
+Web Polygraph                           http://www.web-polygraph.org/
+---------------------------------------------------------------------
+Copyright 2003-2014 The Measurement Factory
+
+
+# Typical build:
+
+    ./configure && make && sudo make install
+
+
+# Customized build:
+
+    ./configure --help
+    ./configure --enable-foo ... CXX=... && make && sudo make install

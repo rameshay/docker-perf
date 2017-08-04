@@ -1,0 +1,7 @@
+Date:  Wed Oct 22 23:40:32 UTC 2014
+Linux dut70 3.13.0-35-generic #62-Ubuntu SMP Fri Aug 15 01:58:42 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+aclocal (GNU automake) 1.14.1
+autoheader (GNU Autoconf) 2.69
+libtoolize (GNU libtool) 2.4.2
+automake (GNU automake) 1.14.1
+autoconf (GNU Autoconf) 2.69
