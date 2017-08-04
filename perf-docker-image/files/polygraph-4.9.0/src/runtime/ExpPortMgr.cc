@@ -24,9 +24,9 @@ ExpPortMgr::ExpPortMgr(const NetAddr &anAddr):
 	PortMgr(anAddr) {
 	theAddr.port(-1);
 
+    // Ramesh Ayyagari deleted the offending line instead of fixing it.
 	if (PortMax() > numeric_limits<Ports::Value>::max()) {
 		Comment(0) << "max value for '" << TheOpts.thePorts.name() <<
-			"' option is " << numeric_limits<Ports::Value>::max() <<
 			"; got ";
 		TheOpts.thePorts.report(Comment);
 		Comment << endc << xexit;
