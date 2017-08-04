@@ -4,10 +4,9 @@ RUN apk add py-pip
 RUN apk add curl
 RUN apk add wget
 RUN apk add openssl
-COPY files/polygraph-4.11.0-src.tgz /tmp
-RUN cd /tmp
-RUN tar xvzf polygraph-4.11-src.tgz
-RUN cd /tmp/polygraph-4.11.0
-RUN ./configure --without-ldns --with-static-linking
-RUN make install
+RUN apk add ldns-dev
+COPY files/polygraph-4.11.0-src.tar /tmp/polygraph-4.11.0-src.tar
+RUN tar xf /tmp/polygraph-4.11.0-src.tar
+WORKDIR "/tmp/polygraph-4.11.0"
+RUN ./configure --with-static-linking && make install
 CMD ["/bin/sh"]
