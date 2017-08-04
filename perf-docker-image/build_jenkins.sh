@@ -9,10 +9,10 @@ function build_image() {
 function push_image() {
     echo "Pushing docker image with tag $1 to registry"
     # Commenting out this until the images are build clean
-    #sudo docker push "${PERF_DOCKER_IMAGE_TAG}/${IMAGE_NAME}":"${ELASTICA_VERSION}"
-    #if [ $? -eq 0 ];
+    sudo docker push "${PERF_DOCKER_IMAGE_TAG}/${IMAGE_NAME}":"${ELASTICA_VERSION}"
+    if [ $? -eq 0 ];
         sudo docker rmi $1
-    #fi
+    fi
     return $?
 }
 
