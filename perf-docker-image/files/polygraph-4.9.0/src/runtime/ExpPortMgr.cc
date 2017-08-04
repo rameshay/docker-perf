@@ -24,10 +24,10 @@ ExpPortMgr::ExpPortMgr(const NetAddr &anAddr):
 	PortMgr(anAddr) {
 	theAddr.port(-1);
 
-    // Ramesh Ayyagari deleted the offending line instead of fixing it.
-	if (PortMax() > numeric_limits<Ports::Value>::max()) {
+    // Ramesh Ayyagari hard coded the unsigned short
+	if (PortMax() > 65536) {
 		Comment(0) << "max value for '" << TheOpts.thePorts.name() <<
-			"; got ";
+		"; got ";
 		TheOpts.thePorts.report(Comment);
 		Comment << endc << xexit;
 	}
