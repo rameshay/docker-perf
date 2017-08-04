@@ -19,16 +19,18 @@ function push_image() {
 
 function main() {
     IMAGE_NAME=`basename $PWD`
-    if [ -z ${PERF_DOCKER_IMAGE_TAG} ]; then
+    PERF_DOCKER_IMAGE_TAG = $1
+    PERF_POLYGRAPH_VERSION = $2
+    if [ -z $PERF_DOCKER_IMAGE_TAG ]; then
         echo "Please provide a proper tag value to the image that is being generated."
         echo "Exiting ...."
         exit 1
     fi
 
-    if [ -z ${PERF_POLYGRAPH_VERSION} ] ; then
+    if [ -z $PERF_POLYGRAPH_VERSION ] ; then
         ELASTICA_VERSION="latest"
     else
-        ELASTICA_VERSION=${PERF_POLYGRAPH_VERSION}
+        ELASTICA_VERSION=$PERF_POLYGRAPH_VERSION
     fi
     DOCKER_IMAGE_TAG="${PERF_DOCKER_IMAGE_TAG}/${IMAGE_NAME}":"${ELASTICA_VERSION}"
     build_image $DOCKER_IMAGE_TAG
