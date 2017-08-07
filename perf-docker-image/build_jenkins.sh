@@ -2,16 +2,16 @@
 set -e
 function build_image() {
     echo "Building docker image with tag $1"
-    sudo docker build --rm . -t $1
+     docker build --rm . -t $1
     exit $?
 }
 
 function push_image() {
     echo "Pushing docker image with tag $1 to registry"
     # Commenting out this until the images are build clean
-    sudo docker push "${PERF_DOCKER_IMAGE_TAG}/${IMAGE_NAME}":"${ELASTICA_VERSION}"
+     docker push "${PERF_DOCKER_IMAGE_TAG}/${IMAGE_NAME}":"${ELASTICA_VERSION}"
     if [ $? -eq 0 ]; then
-        sudo docker rmi $1
+         docker rmi $1
     fi
     return $?
 }
