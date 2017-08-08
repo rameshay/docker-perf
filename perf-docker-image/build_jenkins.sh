@@ -3,7 +3,6 @@ set -e
 function build_image() {
     echo "Building docker image with tag $1"
     sudo docker build --rm . -t $1
-    exit $?
 }
 
 function push_image() {
@@ -13,7 +12,6 @@ function push_image() {
     if [ $? -eq 0 ]; then
         sudo docker rmi $1
     fi
-    return $?
 }
 
 
